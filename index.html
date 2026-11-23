@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>සදහම් පිටකය - ත්‍රිපිටක ධර්ම කරුණු</title>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+    <style>
+        :root { --primary-color: #8e44ad; --secondary-color: #f39c12; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; direction: ltr; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { color: var(--primary-color); text-align: center; }
+        .auth-box, .admin-section { border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin-bottom: 20px; background: #fff; }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        button { background: var(--primary-color); color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; width: 100%; font-size: 16px; }
+        button:hover { background: #7d3c98; }
+        .search-box { margin: 20px 0; }
+        .data-card { background: #fff8e1; border-left: 5px solid var(--secondary-color); padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .data-card h3 { margin-top: 0; color: #d35400; }
+        .hidden { display: none; }
+        .logout-btn { background: #e74c3c; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🙏 සදහම් පිටකය</h1>
+
+    <!-- 1. Login Section -->
+    <div id="authSection" class="auth-box">
+        <h3>ඇතුළු වන්න (Login)</h3>
+        <input type="email" id="email" placeholder="ඊමේල් ලිපිනය">
+        <input type="password" id="password" placeholder="මුරපදය">
+        <button onclick="login()">Log In</button>
+    </div>
+
+    <!-- 2. Admin Section (Hidden until Login) -->
+    <div id="adminSection" class="admin-section hidden">
+        <h3>නව ධර්ම කරුණක් ඇතුළත් කරන්න</h3>
+        <input type="text" id="title" placeholder="මාතෘකාව (උදා: මංගල සූත්‍රය)">
+        <textarea id="content" rows="4" placeholder="අන්තර්ගතය..."></textarea>
+        <button onclick="saveData()">දත්ත සුරකින්න</button>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+    </div>
+
+    <hr>
+
+    <!-- 3. Search & Display Section -->
+    <div class="search-box">
+        <input type="text" id="searchInput" onkeyup="searchData()" placeholder="සෙවීමට මෙහි ටයිප් කරන්න...">
+    </div>
+
+    <div id="dataList">
+        <p style="text-align:center;">දත්ත පූරණය වෙමින් පවතී...</p>
+    </div>
+</div>
+
+<script>
+    // ඔබගේ Firebase Config එක මෙතැනට ඇතුළත් කරන්න
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_PROJECT_ID.appspot.com",
+        messagingSenderId: "YOUR_ID",
+        appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // Login Function
+    function login() {
+        const e = document.getElementById('email').value;
+        const p = document.getElementById('password').value;
+        auth.signInWithEmailAndPassword(e, p)
+            .then(() => alert("සාර්ථකව ඇතුළු විය!"))
+            .catch(err => alert("වැරදියි: " + err.message));
+    }
+
+    // Logout
+    function logout() { auth.signOut(); }
+
+    // Auth State Monitor
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            document.getElementById('authSection').classList.add('hidden');
+            document.getElementById('adminSection').classList.remove('hidden');
+        } else {
+            document.getElementById('authSection').classList.remove('hidden');
+            document.getElementById('adminSection').classList.add('hidden');
+        }
+    });
+
+    // Save Data
+    function saveData() {
+        const title = document.getElementById('title').value;
+        const content = document.getElementById('content').value;
+        if(title && content) {
+            db.collection("tripitaka").add({
+                title: title,
+                content: content,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                alert("දත්ත සුරැකුණි!");
+                document.getElementById('title').value = "";
+                document.getElementById('content').value = "";
+            });
+        }
+    }
+
+    // Real-time Data Fetch
+    db.collection("tripitaka").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+        const list = document.getElementById('dataList');
+        list.innerHTML = "";
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            list.innerHTML += `
+                <div class="data-card">
+                    <h3>${data.title}</h3>
+                    <p>${data.content}</p>
+                </div>
+            `;
+        });
+    });
+
+    // Search Function
+    function searchData() {
+        let filter = document.getElementById('searchInput').value.toLowerCase();
+        let cards = document.getElementsByClassName('data-card');
+        for (let i = 0; i < cards.length; i++) {
+            let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
+            if (title.indexOf(filter) > -1) cards[i].style.display = "";
+            else cards[i].style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
