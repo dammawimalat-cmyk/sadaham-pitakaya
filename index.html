@@ -1,145 +1,99 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>සදහම් පිටකය | ත්‍රිපිටක සූත්‍ර දේශනා</title>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;700&family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #2c1810; --gold: #c7a35a; --cream: #fdfaf5; --paper: #ffffff; --ink: #1a1a1a;
-    }
-    body { margin: 0; font-family: 'Noto Sans Sinhala', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.8; }
-    
-    /* Hero Section - Using your PNG image */
-    .hero {
-      height: 75vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.png') center top/cover no-repeat;
-      display: flex; align-items: center; justify-content: center; text-align: center; color: white;
-    }
-    .hero-content h1 { font-family: 'Noto Serif Sinhala', serif; font-size: clamp(2.5rem, 6vw, 4rem); margin: 0; text-shadow: 2px 2px 15px rgba(0,0,0,0.7); }
-    .hero-content p { font-size: 1.3rem; color: #f0f0f0; max-width: 800px; margin: 20px auto; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
-
-    .container { max-width: 1300px; margin: auto; padding: 20px; }
-    .reader-grid { display: grid; grid-template-columns: 320px 1fr; gap: 30px; margin-top: -60px; }
-    
-    @media (max-width: 950px) { .reader-grid { grid-template-columns: 1fr; margin-top: 20px; } }
-
-    .sidebar { background: var(--paper); border-radius: 15px; border: 1px solid #e0dacc; height: fit-content; position: sticky; top: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); overflow: hidden; }
-    .sidebar-header { background: var(--primary); color: var(--gold); padding: 20px; font-weight: bold; font-size: 1.2rem; border-bottom: 2px solid var(--gold); }
-    .nikaya-list { list-style: none; padding: 0; margin: 0; }
-    .nikaya-item { border-bottom: 1px solid #f0f0f0; }
-    .nikaya-item summary { padding: 18px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; transition: 0.3s; }
-    .nikaya-item summary:hover { background: #fff9eb; }
-    .sutta-sub-list { padding: 10px 20px; background: #fcfcfc; max-height: 400px; overflow-y: auto; }
-    .sutta-link { display: block; padding: 10px 0; color: #444; text-decoration: none; border-bottom: 1px dashed #eee; font-size: 0.95rem; }
-    .sutta-link:hover { color: var(--gold); padding-left: 5px; transition: 0.2s; }
-
-    .main-content { background: var(--paper); border-radius: 15px; padding: 50px; border: 1px solid #e0dacc; box-shadow: 0 15px 35px rgba(0,0,0,0.1); min-height: 600px; }
-    .sutta-title { font-family: 'Noto Serif Sinhala', serif; color: #855d29; font-size: 2.2rem; border-bottom: 3px double var(--gold); padding-bottom: 15px; margin-top: 0; }
-    .sutta-meta { font-size: 1rem; color: #777; margin-bottom: 30px; font-style: italic; }
-    .sutta-body { font-size: 1.35rem; line-height: 2.2; white-space: pre-line; color: #222; text-align: justify; }
-    .placeholder { text-align: center; color: #aaa; padding-top: 150px; }
-    .placeholder h2 { color: var(--gold); opacity: 0.6; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>සදහම් පිටකය | ත්‍රිපිටක සූත්‍ර දේශනා</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;700&family=Noto+Sans+Sinhala:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #2c1810; --gold: #c7a35a; --cream: #fdfaf5; --paper: #ffffff; --ink: #1a1a1a; }
+        body { margin: 0; font-family: 'Noto Sans Sinhala', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.8; }
+        .hero { 
+            height: 70vh; 
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('hero-bg.png') center top/cover no-repeat; 
+            display: flex; align-items: center; justify-content: center; text-align: center; color: white; 
+        }
+        .hero-content h1 { font-family: 'Noto Serif Sinhala', serif; font-size: clamp(2.5rem, 6vw, 4rem); margin: 0; text-shadow: 2px 2px 15px rgba(0,0,0,0.7); }
+        .container { max-width: 1200px; margin: -50px auto 50px; padding: 0 20px; display: grid; grid-template-columns: 300px 1fr; gap: 30px; }
+        @media (max-width: 900px) { .container { grid-template-columns: 1fr; margin-top: 20px; } }
+        .sidebar { background: var(--paper); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: fit-content; overflow: hidden; border: 1px solid #e0dacc; }
+        .sidebar-header { background: var(--primary); color: var(--gold); padding: 20px; font-weight: bold; }
+        .nikaya-item summary { padding: 15px; cursor: pointer; font-weight: bold; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
+        .sutta-link { display: block; padding: 10px 20px; color: #555; text-decoration: none; font-size: 0.9rem; border-bottom: 1px dashed #eee; }
+        .sutta-link:hover { background: #fff9eb; color: var(--gold); }
+        .reader { background: var(--paper); border-radius: 12px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #e0dacc; min-height: 500px; }
+        .sutta-title { font-family: 'Noto Serif Sinhala', serif; color: #855d29; border-bottom: 2px solid var(--gold); padding-bottom: 10px; }
+        .sutta-content { font-size: 1.2rem; white-space: pre-line; text-align: justify; margin-top: 20px; }
+        .loading { padding: 20px; text-align: center; color: #888; }
+    </style>
 </head>
 <body>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>සදහම් පිටකය</h1>
-      <p>නිර්මල ශ්‍රී සද්ධර්මය ලෝකවාසී සියලු සත්වයන්ගේ හිතසුව පිණිස පවත්වමු.</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <div class="reader-grid">
-      <aside class="sidebar">
-        <div class="sidebar-header">ත්‍රිපිටක සූත්‍ර නාමාවලිය</div>
-        <div id="nikaya-list" class="nikaya-list">
-          <div class="placeholder" style="padding: 20px; padding-top: 50px;">දත්ත පූරණය වෙමින්...</div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>සදහම් පිටකය</h1>
+            <p>ශ්‍රී සද්ධර්මය ලෝකවාසී සැමට හිතසුව පිණිස පවත්වමු.</p>
         </div>
-      </aside>
+    </section>
 
-      <article class="main-content" id="reader">
-        <div id="sutta-display">
-          <div class="placeholder">
-            <h2>සාදරයෙන් පිළිගනිමු</h2>
-            <p>කියවීම සඳහා වම් පස ඇති ලැයිස්තුවෙන් සූත්‍රයක් තෝරාගන්න.</p>
-          </div>
-        </div>
-      </article>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">පටුන</div>
+            <div id="menu-loading" class="loading">දත්ත පූරණය වෙමින්...</div>
+            <div id="nikaya-menu"></div>
+        </aside>
+
+        <main class="reader" id="reader">
+            <div id="content-area">
+                <h2 style="color: var(--gold); text-align: center; margin-top: 100px;">සාදරයෙන් පිළිගනිමු</h2>
+                <p style="text-align: center; color: #666;">කියවීම සඳහා වම් පස ඇති පටුනෙන් සූත්‍රයක් තෝරාගන්න.</p>
+            </div>
+        </main>
     </div>
-  </main>
 
-  <script>
-    async function loadNikayas() {
-      try {
-        const response = await fetch('data/sutta-nikayas.json');
-        const data = await response.json();
-        const nikayaList = data.nikayas || [];
-        
-        const listContainer = document.getElementById('nikaya-list');
-        listContainer.innerHTML = '';
+    <script>
+        async function init() {
+            try {
+                const res = await fetch('data/sutta-nikayas.json');
+                const data = await res.json();
+                const menu = document.getElementById('nikaya-menu');
+                document.getElementById('menu-loading').style.display = 'none';
 
-        nikayaList.forEach(nikaya => {
-          const detail = document.createElement('details');
-          detail.className = 'nikaya-item';
-          detail.innerHTML = `
-            <summary>${nikaya.nameSi} <span>▼</span></summary>
-            <div class="sutta-sub-list" id="list-${nikaya.id}">පූරණය වෙමින්...</div>
-          `;
-          
-          detail.addEventListener('toggle', () => {
-            if (detail.open) loadSuttaList(nikaya.id, nikaya.file);
-          });
+                data.nikayas.forEach(nikaya => {
+                    const det = document.createElement('details');
+                    det.className = 'nikaya-item';
+                    det.innerHTML = `<summary>${nikaya.nameSi} ▾</summary><div id="list-${nikaya.id}" class="loading">සූත්‍ර ලැයිස්තුව පූරණය වෙමින්...</div>`;
+                    det.addEventListener('toggle', () => loadSuttas(nikaya.id, nikaya.file), { once: true });
+                    menu.appendChild(det);
+                });
+            } catch (e) { console.error("Error loading Nikayas"); }
+        }
 
-          listContainer.appendChild(detail);
-        });
-      } catch (err) {
-        document.getElementById('nikaya-list').innerHTML = `<p style="padding:20px; color:red;">දත්ත (JSON) සොයාගත නොහැක.</p>`;
-      }
-    }
+        async function loadSuttas(id, file) {
+            try {
+                const res = await fetch(`data/sutta/${file}`);
+                const data = await res.json();
+                const container = document.getElementById(`list-${id}`);
+                container.innerHTML = '';
+                data.suttas.forEach(s => {
+                    const a = document.createElement('a');
+                    a.className = 'sutta-link';
+                    a.href = '#';
+                    a.innerText = s.titleSi;
+                    a.onclick = (e) => { e.preventDefault(); showSutta(s); };
+                    container.appendChild(a);
+                });
+            } catch (e) { console.error("Error loading suttas"); }
+        }
 
-    async function loadSuttaList(id, fileName) {
-      const container = document.getElementById(`list-${id}`);
-      if (container.dataset.loaded) return;
-
-      try {
-        const response = await fetch(`data/sutta/${fileName}`);
-        const data = await response.json();
-        
-        container.innerHTML = '';
-        data.suttas.forEach(sutta => {
-          const link = document.createElement('a');
-          link.href = "#reader";
-          link.className = 'sutta-link';
-          link.innerText = "• " + sutta.titleSi;
-          link.onclick = (e) => {
-            e.preventDefault();
-            displaySutta(sutta);
-          };
-          container.appendChild(link);
-        });
-        container.dataset.loaded = "true";
-      } catch (err) {
-        container.innerHTML = "ගොනුව පූරණය කළ නොහැක.";
-      }
-    }
-
-    function displaySutta(sutta) {
-      const display = document.getElementById('sutta-display');
-      display.innerHTML = `
-        <h2 class="sutta-title">${sutta.titleSi}</h2>
-        <div class="sutta-meta">පාලි නාමය: ${sutta.paliTitle} | මූලාශ්‍රය: ${sutta.reference}</div>
-        <div class="sutta-body">${sutta.contentSi}</div>
-      `;
-      if (window.innerWidth < 950) {
-        document.getElementById('reader').scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    loadNikayas();
-  </script>
+        function showSutta(s) {
+            document.getElementById('content-area').innerHTML = `
+                <h2 class="sutta-title">${s.titleSi}</h2>
+                <p style="color: #888; font-style: italic;">${s.paliTitle || ''} | ${s.reference || ''}</p>
+                <div class="sutta-content">${s.contentSi}</div>
+            `;
+            window.scrollTo({ top: document.getElementById('reader').offsetTop - 20, behavior: 'smooth' });
+        }
+        init();
+    </script>
 </body>
 </html>
