@@ -1,0 +1,12 @@
+{
+  "pitaka": "Sutta Piṭaka",
+  "nameSi": "සූත්‍ර පිටකය",
+  "order": "traditional",
+  "nikayas": [
+    {"id":"digha","order":1,"nameSi":"දීඝ නිකාය","paliName":"Dīgha Nikāya","description":"දීර්ඝ දේශනා සංග්‍රහය. සිලක්ඛන්ධ, මහා සහ පාථික වර්ග ලෙස සකස් කර ඇත.","file":"digha.json"},
+    {"id":"majjhima","order":2,"nameSi":"මජ්ඣිම නිකාය","paliName":"Majjhima Nikāya","description":"මධ්‍යම ප්‍රමාණයේ දේශනා සංග්‍රහය. පණ්ණාසක තුනකින් සමන්විතය.","file":"majjhima.json"},
+    {"id":"samyutta","order":3,"nameSi":"සංයුත්ත නිකාය","paliName":"Saṃyutta Nikāya","description":"විෂය අනුව සහ පුද්ගල කාණ්ඩ අනුව එකතු කළ සංයුත්ත සංග්‍රහය.","file":"samyutta.json"},
+    {"id":"anguttara","order":4,"nameSi":"අංගුත්තර නිකාය","paliName":"Aṅguttara Nikāya","description":"එකක නිපාතයේ සිට එකොළොස්ක නිපාතය දක්වා සංඛ්‍යාත්මක අනුපිළිවෙළින් සකස් කළ දේශනා.","file":"anguttara.json"},
+    {"id":"khuddaka","order":5,"nameSi":"ඛුද්දක නිකාය","paliName":"Khuddaka Nikāya","description":"ග්‍රන්ථ ගණනාවකින් සමන්විත කුඩා ග්‍රන්ථ සංග්‍රහය; මෙහි නියැදි සූත්‍ර කිහිපයක් ද ඇත.","file":"khuddaka.json"}
+  ]
+}
