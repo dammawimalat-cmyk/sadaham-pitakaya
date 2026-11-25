@@ -3,157 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#153e35">
-  <meta name="description" content="ත්‍රිපිටකයෙහි සූත්‍ර, ගාථා සහ දහම් කරුණු කියවන්න.">
-  <title>සදහම් පිටකය | බුද්ධ දහම එක් තැනකින්</title>
+  <meta name="theme-color" content="#2c1810">
+  <meta name="description" content="ත්‍රිපිටකයේ සූත්‍ර නිකාය අනුව කියවන්න.">
+  <title>සදහම් පිටකය | ත්‍රිපිටක සූත්‍ර දේශනා</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{--green:#153e35;--deep:#102e27;--gold:#c7a35a;--gold-light:#e8d39b;--cream:#f7f3e8;--paper:#fffdf7;--ink:#202722;--muted:#6d756f;--line:#e7e2d4;--soft:#eaf0eb;--header:rgba(255,253,247,.96)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.8 "Noto Sans Sinhala",sans-serif;transition:background .2s,color .2s}button,input{font:inherit}button,a{cursor:pointer}a{color:inherit;text-decoration:none}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-    body.dark{--cream:#121814;--paper:#1a231e;--ink:#e0e7e2;--muted:#a0acab;--line:#2d3832;--soft:#202b24;--header:rgba(18,24,20,.96)}
-    .wrap{width:min(1180px,calc(100% - 40px));margin:auto}.top{background:var(--deep);color:#e4ece7;font-size:13px}.top .wrap{display:flex;justify-content:space-between;padding:5px 0}.top a{margin-left:18px}
-    header{position:sticky;top:0;z-index:5;height:78px;background:var(--header);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:flex;align-items:center;gap:12px}.wheel{width:46px;height:46px;border:3px solid #d9c792;border-radius:50%;display:grid;place-items:center;background:var(--green);color:var(--gold-light);font-size:25px}.brand strong{display:block;font:700 21px/1.35 "Noto Serif Sinhala",serif}.brand small{color:var(--muted);font-size:12px}.links{display:flex;align-items:center;gap:22px;font-weight:700;font-size:14px}.links a:hover,.footer a:hover{color:var(--gold)}.actions{display:flex;align-items:center;gap:8px}.btn{border:0;border-radius:8px;padding:9px 13px;background:var(--green);color:#fff}.theme{border:1px solid var(--gold);border-radius:8px;padding:8px 10px;color:var(--ink);background:transparent}.menu{display:none;border:0;background:none;color:var(--ink);font-size:24px}
-    .hero{min-height:370px;display:grid;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(16,46,39,.96),rgba(16,46,39,.72)),url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85") center/cover}.hero-inner{padding:55px 0}.kicker{color:var(--gold-light);font-weight:700}.hero h1{font:700 clamp(32px,5vw,47px)/1.4 "Noto Serif Sinhala",serif;margin:10px 0}.hero p{max-width:680px;color:#e0e9e4;margin:0 0 22px}.search{display:flex;gap:8px;width:min(680px,100%);padding:7px;background:white;border-radius:9px}.search input{flex:1;min-width:0;border:0;padding:10px 12px;outline:0}.search button{border:0;border-radius:6px;padding:8px 18px;background:var(--gold);color:var(--deep);font-weight:800}
-    section{padding:52px 0}.heading{margin-bottom:20px}.heading h2{margin:0;font:700 29px "Noto Serif Sinhala",serif}.heading p{margin:4px 0 0;color:var(--muted)}.reader{padding:22px;background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px #2b36300c}.tools{display:flex;gap:9px;margin-bottom:16px}.tools input{flex:1;min-width:0;padding:10px 13px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink)}.tools button{min-width:46px;border:1px solid var(--line);border-radius:8px;background:var(--soft);color:var(--ink);font-weight:800}.reader-grid{display:grid;grid-template-columns:minmax(245px,320px) 1fr;gap:20px;align-items:start}.side{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}.side-title{padding:12px 14px;background:var(--soft);font-weight:800}.list{padding:8px}.nikaya{border-bottom:1px solid var(--line)}.nikaya:last-child{border:0}.nikaya summary{display:flex;gap:10px;padding:11px 8px;cursor:pointer;list-style:none}.nikaya summary::-webkit-details-marker{display:none}.nikaya summary:after{content:"＋";margin-left:auto;color:var(--gold);font-weight:800}.nikaya[open] summary:after{content:"−"}.num{color:var(--gold);font-weight:800;min-width:22px}.name{font-weight:700;line-height:1.55}.name small{display:block;color:var(--muted);font-size:11px;font-weight:400}.description,.sutra-list{padding:0 12px 11px 40px;color:var(--muted);font-size:12px}.sutra-list ul{margin:0;padding-left:17px}.sutra-list li{margin:4px 0}.sutta-link{padding:0;border:0;background:none;color:var(--green);font:inherit;text-align:left;text-decoration:underline;text-underline-offset:3px}.dark .sutta-link{color:var(--gold-light)}.results{min-height:250px;scroll-margin-top:100px}.hint{padding:24px;border:1px dashed var(--line);border-radius:10px;color:var(--muted);text-align:center}.card{padding:17px;margin-bottom:12px;border:1px solid var(--line);border-radius:10px;background:var(--paper)}.card h3{margin:0;font:600 22px "Noto Serif Sinhala",serif;color:var(--gold)}.meta{margin:3px 0 10px;color:var(--muted);font-size:12px}.card p{margin:0;white-space:pre-line;font-size:var(--read-size,18px)}.copy{float:right;border:1px solid var(--line);border-radius:7px;padding:5px 9px;background:var(--soft);color:var(--ink);font-size:12px}.loading,.error{display:block;padding:15px;text-align:center}.loading{color:var(--muted)}.error{color:#b3483e}.quick{display:grid;grid-template-columns:repeat(4,1fr);background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden}.quick article{display:flex;align-items:center;gap:10px;padding:15px;border-right:1px solid var(--line)}.quick article:last-child{border:0}.quick strong{display:block}.quick small{color:var(--muted)}.daily{display:grid;grid-template-columns:1fr 1.4fr;gap:18px}.daily-main{padding:24px;border-radius:12px;background:var(--green);color:white}.daily-main small{color:var(--gold-light)}.daily-main h3{margin:8px 0}.daily-main p{margin:0;color:#dce7e2}.daily-list{display:grid;gap:9px}.daily-list article{padding:11px 14px;border:1px solid var(--line);border-radius:9px;background:var(--paper)}.daily-list h4,.daily-list p{margin:0}.daily-list p{font-size:13px;color:var(--muted)}
-    .footer{padding:32px 0 15px;background:#0b241e;color:#bacbc4}.footer-grid{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:24px}.footer h4{margin:0;color:white}.footer a{display:block;margin:6px 0;font-size:14px}.footer p{max-width:290px}.copyright{padding-top:12px;border-top:1px solid #ffffff20;text-align:center;font-size:12px}
-    @media(max-width:900px){.links{display:none}.nav.open{position:absolute;top:78px;left:0;right:0;height:auto;padding:16px 20px;background:var(--paper);box-shadow:0 10px 20px #0002;flex-wrap:wrap}.nav.open .links{display:flex;order:3;width:100%;flex-wrap:wrap}.menu{display:block}.reader-grid{grid-template-columns:1fr}.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.quick{grid-template-columns:repeat(2,1fr)}.quick article:nth-child(2){border-right:0}.footer-grid{grid-template-columns:1.5fr repeat(2,1fr)}}
-    @media(max-width:600px){.wrap{width:calc(100% - 28px)}.top{display:none}header{height:68px}.nav.open{top:68px}.brand strong{font-size:18px}.wheel{width:40px;height:40px}.actions .btn{display:none}.theme{font-size:11px;padding:7px}.hero{min-height:350px}.hero-inner{padding:40px 0}.hero p{font-size:14px}.search{flex-direction:column}.search button{width:100%}section{padding:40px 0}.heading h2{font-size:24px}.reader{padding:13px}.tools{flex-wrap:wrap}.tools input{flex-basis:100%}.list{display:block}.quick article{padding:10px}.quick strong{font-size:12px}.daily{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+    :root{--primary:#2c1810;--gold:#c7a35a;--cream:#fdfaf5;--paper:#fff;--ink:#1a1a1a;--muted:#777;--line:#e7dfd3;--reading:20px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.8 "Noto Sans Sinhala",sans-serif;background:var(--cream);color:var(--ink)}button,a{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    .hero{min-height:62vh;display:grid;place-items:center;text-align:center;color:#fff;padding:56px 20px;background:linear-gradient(120deg,rgba(44,24,16,.78),rgba(70,20,7,.55)),url('./hero-bg.jpg') center 35%/cover no-repeat,#541e0b}.hero-content{max-width:850px}.hero h1{font:700 clamp(2.4rem,6vw,4rem)/1.4 "Noto Serif Sinhala",serif;margin:0;text-shadow:0 2px 14px #0009}.hero p{font-size:clamp(1rem,2vw,1.3rem);color:#fff;margin:16px auto 0;text-shadow:0 1px 5px #0009}
+    .container{max-width:1300px;margin:auto;padding:20px}.reader-grid{display:grid;grid-template-columns:320px minmax(0,1fr);gap:26px;margin-top:-44px;position:relative;align-items:start}.sidebar,.main-content{background:var(--paper);border:1px solid var(--line);border-radius:15px;box-shadow:0 15px 35px #00000012}.sidebar{position:sticky;top:18px;overflow:hidden}.sidebar-header{background:var(--primary);color:var(--gold);padding:16px 19px;font-weight:700;font-size:1.1rem;border-bottom:2px solid var(--gold)}.nikaya-list{margin:0;padding:0;list-style:none}.nikaya-item{border-bottom:1px solid #f0ece6}.nikaya-item:last-child{border-bottom:0}.nikaya-item summary{padding:14px 16px;cursor:pointer;font-weight:700;display:flex;justify-content:space-between;gap:12px}.nikaya-item summary:hover{background:#fff9eb}.nikaya-item summary::marker{color:var(--gold)}.nikaya-pali{display:block;color:var(--muted);font:400 .78rem/1.5 sans-serif}.sutta-sub-list{padding:8px 18px 14px;background:#fcfaf7;max-height:380px;overflow:auto}.sutta-link{display:block;width:100%;padding:8px 0;border:0;border-bottom:1px dashed #e6dfd5;background:none;color:var(--primary);text-align:left;text-decoration:none}.sutta-link:hover{color:#946b2e}.main-content{padding:clamp(22px,4vw,48px);min-height:480px;scroll-margin-top:20px}.sutta-title{font:600 clamp(1.6rem,3vw,2.2rem)/1.5 "Noto Serif Sinhala",serif;color:#855d29;border-bottom:3px double var(--gold);padding-bottom:12px;margin:0}.sutta-meta{font-size:.92rem;color:var(--muted);margin:12px 0 24px}.sutta-body{font-size:var(--reading);line-height:2.1;white-space:pre-line;text-align:justify}.placeholder{text-align:center;color:#999;padding:70px 16px}.placeholder h2{color:var(--gold)}.message{padding:16px;color:#8b3528;text-align:center}.reader-tools{display:flex;justify-content:flex-end;gap:8px;margin-bottom:12px}.reader-tools button{border:1px solid var(--line);border-radius:7px;background:#fffaf0;color:var(--primary);padding:5px 12px}.loading{color:var(--muted);padding:18px;text-align:center}
+    @media(max-width:950px){.reader-grid{grid-template-columns:1fr;margin-top:20px}.sidebar{position:static}.sutta-sub-list{max-height:320px}}
+    @media(max-width:600px){.hero{min-height:52vh;background-position:58% center}.container{padding:14px}.reader-grid{gap:14px}.main-content{padding:20px}.sutta-body{text-align:left}.placeholder{padding:42px 10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
 </head>
 <body>
-  <div class="top"><div class="wrap"><span>සදහම් පිටකය — ධර්ම දානය උතුම් දානයයි</span><span><a href="#reader">සූත්‍ර පිටකය</a></span></div></div>
-  <header><div class="wrap nav" id="mainNav"><a class="brand" href="#home"><span class="wheel" aria-hidden="true">☸</span><span><strong>සදහම් පිටකය</strong><small>බුද්ධ දහම එක් තැනකින්</small></span></a><nav class="links" aria-label="ප්‍රධාන මෙනුව"><a href="#home">මුල් පිටුව</a><a href="#reader">ත්‍රිපිටකය</a><a href="#daily">දෛනික දහම</a><a href="about.html">අප ගැන</a></nav><div class="actions"><button class="btn" type="button" onclick="document.getElementById('readerSearch').focus()">සූත්‍ර සොයන්න</button><button class="theme" id="themeButton" type="button" aria-pressed="false">අඳුරු මාදිලිය</button></div><button class="menu" id="menuButton" type="button" aria-label="මෙනුව විවෘත කරන්න" aria-expanded="false">☰</button></div></header>
-  <main id="home">
-    <section class="hero"><div class="wrap hero-inner"><div class="kicker">ත්‍රිපිටකය • සාම්ප්‍රදායික පිළිවෙළින්</div><h1>සදහම් පිටකය</h1><p>සූත්‍ර පිටකයේ නිකායන් පිළිවෙළට ගවේෂණය කරන්න. නිකායක් විවෘත කර සූත්‍රයක් තෝරාගෙන කියවන්න.</p><form class="search" id="heroSearch"><input id="heroQuery" type="search" placeholder="සූත්‍ර නමක් හෝ වචනයක් සොයන්න..." autocomplete="off" aria-label="සූත්‍ර සොයන්න"><button type="submit">සොයන්න</button></form></div></section>
-    <section id="reader"><div class="wrap"><div class="heading"><h2>සූත්‍ර පිටකය — නිකාය අනුව</h2><p>නිකායක් විවෘත කර සූත්‍රයක් තෝරන්න. පෙළ පෙන්වන්නේ තෝරාගත් සූත්‍රය පමණි.</p></div><div class="reader"><div class="tools"><input id="readerSearch" type="search" placeholder="සූත්‍ර නාමය හෝ දහම් කරුණ සොයන්න..." aria-label="සූත්‍ර සොයන්න"><button id="fontUp" type="button" aria-label="අකුරු විශාල කරන්න">A+</button><button id="fontDown" type="button" aria-label="අකුරු කුඩා කරන්න">A−</button></div><div class="reader-grid"><aside class="side" aria-label="සූත්‍ර නිකාය සංචාලනය"><div class="side-title">සූත්‍ර පිටකය • නිකාය 5</div><div class="list" id="nikayaList"><p class="loading">නිකාය ලැයිස්තුව පූරණය වෙමින්...</p></div></aside><div class="results" id="results" aria-live="polite"><div class="hint">නිකායක් විවෘත කර එහි සූත්‍රයක් තෝරන්න.</div></div></div></div></div></section>
-    <section style="padding-top:0"><div class="wrap quick"><article><span aria-hidden="true">📖</span><div><strong>සූත්‍ර පිටකය</strong><small>නිකාය පහ</small></div></article><article><span aria-hidden="true">⚖</span><div><strong>විනය පිටකය</strong><small>ඊළඟ සංවර්ධන අදියර</small></div></article><article><span aria-hidden="true">◈</span><div><strong>අභිධර්ම පිටකය</strong><small>ඊළඟ සංවර්ධන අදියර</small></div></article><article><span aria-hidden="true">☸</span><div><strong>සාම්ප්‍රදායික පිළිවෙළ</strong><small>අධ්‍යයනයට පහසු මෙනුව</small></div></article></div></section>
-    <section id="daily"><div class="wrap"><div class="heading"><h2>දෛනික දහම</h2><p>සිත සනසන දහම් සිතුවිල්ලක්</p></div><div class="daily"><article class="daily-main"><small>දහම් සිතුවිල්ල • සතිමත් බව</small><h3>සිතේ සංවරය</h3><p>සිත සංවර කරගැනීමෙන් සැනසීමත්, යහපත් ක්‍රියාවන්ට මඟත් උදා වේ.</p></article><div class="daily-list"><article><h4>ශ්‍රද්ධාව හා නුවණ</h4><p>සත්‍යය විමසා අවබෝධයෙන් පිළිගනිමු.</p></article><article><h4>දැහැමි ජීවිතය</h4><p>අහිංසාව සහ පරිත්‍යාගය වඩමු.</p></article><article><h4>සතිපට්ඨාන භාවනාව</h4><p>සිරුර, වේදනා සහ සිත පිළිබඳ සතිමත් වෙමු.</p></article></div></div></div></section>
-  </main>
-  <footer class="footer"><div class="wrap"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#home"><span class="wheel" aria-hidden="true">☸</span><span><strong>සදහම් පිටකය</strong></span></a><p>යහපත් ජීවිතයක් සහ ධර්මය අධ්‍යයනය සඳහා වූ සිංහල ධර්ම වෙබ් අඩවිය.</p></div><div><h4>ත්‍රිපිටකය</h4><a href="#reader">සූත්‍ර පිටකය</a><a href="#reader">නිකාය සංග්‍රහ</a></div><div><h4>සම්පත්</h4><a href="#daily">දෛනික දහම</a><a href="about.html">අප ගැන</a></div><div><h4>සම්බන්ධ වන්න</h4><a href="tel:+94112737475">011 2737475</a></div></div><div class="copyright">© 2026 සදහම් පිටකය</div></div></footer>
+  <section class="hero" aria-label="සදහම් පිටකය හැඳින්වීම"><div class="hero-content"><h1>සදහම් පිටකය</h1><p>නිර්මල ශ්‍රී සද්ධර්මය ලෝකවාසී සියලු සත්වයන්ගේ හිතසුව පිණිස පවත්වමු.</p></div></section>
+  <main class="container"><div class="reader-grid">
+    <aside class="sidebar" aria-label="ත්‍රිපිටක සූත්‍ර නාමාවලිය"><div class="sidebar-header">ත්‍රිපිටක සූත්‍ර නාමාවලිය</div><div id="nikaya-list" class="nikaya-list"><div class="loading">දත්ත පූරණය වෙමින්...</div></div></aside>
+    <article class="main-content" id="reader" aria-live="polite"><div class="reader-tools"><button id="font-down" type="button" aria-label="අකුරු කුඩා කරන්න">A−</button><button id="font-up" type="button" aria-label="අකුරු විශාල කරන්න">A+</button></div><div id="sutta-display"><div class="placeholder"><h2>සාදරයෙන් පිළිගනිමු</h2><p>කියවීම සඳහා වම් පස ඇති жагсаалтаас සූත්‍රයක් තෝරගන්න.</p></div></div></article>
+  </div></main>
   <script>
     'use strict';
-    const INDEX_URL = './data/sutta-nikayas.json';
-    const DATA_ROOT = './data/sutta/';
-    const listEl = document.getElementById('nikayaList');
-    const resultsEl = document.getElementById('results');
-    const loaded = new Map();
-    let nikayas = [];
-    let fontSize = 18;
-
-    function escapeHTML(value) {
-      return String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    const DATA_ROOT='./data/sutta/';
+    const listContainer=document.getElementById('nikaya-list');
+    const display=document.getElementById('sutta-display');
+    const cache=new Map();
+    let readingSize=20;
+    const escapeHTML=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+    async function getJSON(path){const response=await fetch(path);if(!response.ok)throw new Error(`HTTP ${response.status}: ${path}`);return response.json();}
+    function showSutta(sutta,nikaya){
+      const title=sutta.titleSi||'සූත්‍රය';
+      const pali=sutta.paliTitle?`පාලි නාමය: ${sutta.paliTitle}`:'';
+      const reference=sutta.reference?`මූලාශ්‍රය: ${sutta.reference}`:'';
+      const section=sutta.sectionSi||sutta.collection||'';
+      const meta=[pali,reference,section].filter(Boolean).join(' | ');
+      const text=sutta.contentSi||sutta.excerpt||'මෙම සූත්‍රය සඳහා පෙළ තවම එකතු කර නැත.';
+      display.innerHTML=`<h2 class="sutta-title">${escapeHTML(title)}</h2><div class="sutta-meta">${escapeHTML(meta||nikaya.nameSi||'')}</div><div class="sutta-body">${escapeHTML(text)}</div>`;
+      if(innerWidth<950)document.getElementById('reader').scrollIntoView({behavior:'smooth',block:'start'});
     }
-
-    async function fetchJSON(url) {
-      const response = await fetch(url);
-      if (!response.ok) throw new Error(`HTTP ${response.status}: ${url}`);
-      return response.json();
+    async function loadSuttaList(nikaya,container){
+      if(container.dataset.loaded==='true')return;
+      if(container.dataset.loading==='true')return;
+      container.dataset.loading='true';container.innerHTML='<div class="loading">සූත්‍ර ලැයිස්තුව පූරණය කරමින්...</div>';
+      try{
+        const filename=nikaya.file||`${nikaya.id}.json`;
+        let pending=cache.get(nikaya.id);
+        if(!pending){pending=getJSON(DATA_ROOT+encodeURIComponent(filename));cache.set(nikaya.id,pending);pending.catch(()=>cache.delete(nikaya.id));}
+        const data=await pending;
+        const suttas=Array.isArray(data.suttas)?data.suttas:[];
+        if(!suttas.length){container.innerHTML='<div class="loading">මෙම නිකායේ සූත්‍ර ලැයිස්තුව ඉදිරියේදී එකතු කෙරේ.</div>';container.dataset.loaded='true';return;}
+        container.replaceChildren();
+        suttas.forEach(sutta=>{const button=document.createElement('button');button.type='button';button.className='sutta-link';button.textContent=`• ${sutta.titleSi||'නම් නොකළ සූත්‍ර'}${sutta.reference?' · '+sutta.reference:''}`;button.addEventListener('click',()=>showSutta(sutta,data));container.appendChild(button);});
+        container.dataset.loaded='true';
+      }catch(error){console.error('Sutta list loading failed:',error);container.innerHTML='<div class="message">සූත්‍ර ලැයිස්තුව පූරණය කළ නොහැකි විය. නැවත විවෘත කර උත්සාහ කරන්න.</div>';}
+      finally{delete container.dataset.loading;}
     }
-
-    function dataFile(nikaya) {
-      return nikaya.file || `${nikaya.id}.json`;
+    async function loadNikayas(){
+      try{
+        const index=await getJSON('./data/sutta-nikayas.json');
+        const nikayas=Array.isArray(index)?index:index.nikayas;
+        if(!Array.isArray(nikayas)||!nikayas.length)throw new Error('Nikaya index has no entries');
+        listContainer.replaceChildren();
+        nikayas.forEach(nikaya=>{
+          const detail=document.createElement('details');detail.className='nikaya-item';
+          const summary=document.createElement('summary');summary.textContent=nikaya.nameSi||nikaya.id;
+          if(nikaya.paliName){const pali=document.createElement('span');pali.className='nikaya-pali';pali.textContent=nikaya.paliName;summary.appendChild(pali);}
+          const sublist=document.createElement('div');sublist.className='sutta-sub-list';sublist.id=`list-${nikaya.id}`;sublist.innerHTML='<div class="loading">මඳක් රැඳී සිටින්න...</div>';
+          detail.append(summary,sublist);detail.addEventListener('toggle',()=>{if(detail.open)loadSuttaList(nikaya,sublist);});listContainer.appendChild(detail);
+        });
+      }catch(error){console.error('Nikaya index loading failed:',error);listContainer.innerHTML='<p class="message">නිකාය ලැයිස්තුව පූරණය කළ නොහැකි විය. පිටුව නැවත පූරණය කර උත්සාහ කරන්න.</p>';}
     }
-
-    async function loadNikaya(nikaya) {
-      if (!loaded.has(nikaya.id)) {
-        const promise = fetchJSON(DATA_ROOT + encodeURIComponent(dataFile(nikaya)))
-          .catch(error => { loaded.delete(nikaya.id); throw error; });
-        loaded.set(nikaya.id, promise);
-      }
-      return loaded.get(nikaya.id);
-    }
-
-    function showSutta(data, sutta) {
-      const section = sutta.sectionSi || sutta.collection || data.nameSi || '';
-      const text = sutta.contentSi || sutta.excerpt || 'මෙම සූත්‍රය සඳහා පෙළ තවම එකතු කර නැත.';
-      resultsEl.innerHTML = `<article class="card"><button class="copy" type="button">පිටපත් කරන්න</button><h3>${escapeHTML(sutta.titleSi || 'නම් නොකළ සූත්‍රය')}</h3><div class="meta">${escapeHTML(sutta.reference || '')}${section ? ' · ' + escapeHTML(section) : ''}</div><p>${escapeHTML(text)}</p></article>`;
-      resultsEl.querySelector('.copy').addEventListener('click', async event => {
-        const button = event.currentTarget;
-        const content = `${sutta.titleSi || ''}\n${sutta.reference || ''}\n\n${text}`;
-        try { await navigator.clipboard.writeText(content); button.textContent = 'පිටපත් කළා!'; }
-        catch { button.textContent = 'පිටපත් කළ නොහැක'; }
-        setTimeout(() => { button.textContent = 'පිටපත් කරන්න'; }, 1500);
-      });
-    }
-
-    function renderSuttas(container, data) {
-      const suttas = Array.isArray(data.suttas) ? data.suttas : [];
-      if (!suttas.length) {
-        container.innerHTML = '<span class="loading">මෙම නිකායේ සූත්‍ර ලැයිස්තුව ඉදිරියේදී එකතු කෙරේ.</span>';
-        return;
-      }
-      const sections = (data.sections || []).map(section => typeof section === 'string' ? section : (section.titleSi || section.name || ''));
-      const groups = sections.map(name => ({name, items:suttas.filter(item => item.sectionSi === name || item.collection === name)})).filter(group => group.items.length);
-      const grouped = new Set(groups.flatMap(group => group.items));
-      const remaining = suttas.filter(item => !grouped.has(item));
-      if (remaining.length) groups.push({name:'අනෙකුත් සූත්‍ර',items:remaining});
-      if (!groups.length) groups.push({name:data.nameSi || data.paliName || '',items:suttas});
-      container.innerHTML = groups.map(group => `<div><strong>${escapeHTML(group.name)}</strong><ul>${group.items.map(item => `<li><button class="sutta-link" type="button" data-id="${escapeHTML(item.id || '')}" data-title="${escapeHTML(item.titleSi || '')}">${escapeHTML(item.titleSi || 'නම් නොකළ සූත්‍ර')}${item.reference ? ' · ' + escapeHTML(item.reference) : ''}</button></li>`).join('')}</ul></div>`).join('');
-      container.querySelectorAll('.sutta-link').forEach(button => button.addEventListener('click', () => {
-        const sutta = suttas.find(item => (item.id && item.id === button.dataset.id) || item.titleSi === button.dataset.title);
-        if (sutta) showSutta(data, sutta);
-      }));
-    }
-
-    function renderNavigation(items) {
-      nikayas = items;
-      if (!nikayas.length) throw new Error('Nikaya index contains no entries');
-      listEl.innerHTML = nikayas.map((nikaya, index) => `<details class="nikaya" data-id="${escapeHTML(nikaya.id)}"><summary><span class="num">${String(index + 1).padStart(2,'0')}</span><span class="name">${escapeHTML(nikaya.nameSi || nikaya.id)}<small>${escapeHTML(nikaya.paliName || '')}</small></span></summary>${nikaya.description ? `<div class="description">${escapeHTML(nikaya.description)}</div>` : ''}<div class="sutra-list" id="suttas-${escapeHTML(nikaya.id)}"><span class="loading">සූත්‍ර ලැයිස්තුව පූරණය කරමින්...</span></div></details>`).join('');
-      listEl.querySelectorAll('details').forEach(details => details.addEventListener('toggle', async () => {
-        if (!details.open || details.dataset.loaded === 'true') return;
-        const nikaya = nikayas.find(item => item.id === details.dataset.id);
-        const target = document.getElementById(`suttas-${nikaya.id}`);
-        try { renderSuttas(target, await loadNikaya(nikaya)); details.dataset.loaded = 'true'; }
-        catch (error) { console.error('Could not load nikaya data:', error); target.innerHTML = '<span class="error">සූත්‍ර දත්ත පූරණය කළ නොහැකි විය. නැවත විවෘත කර උත්සාහ කරන්න.</span>'; }
-      }));
-    }
-
-    async function searchAll(query) {
-      const normalized = query.trim().toLocaleLowerCase('si');
-      if (!normalized) { resultsEl.innerHTML = '<div class="hint">නිකායක් විවෘත කර එහි සූත්‍රයක් තෝරන්න.</div>'; return; }
-      resultsEl.innerHTML = '<div class="hint">සූත්‍ර සොයමින්...</div>';
-      try {
-        const datasets = await Promise.all(nikayas.map(loadNikaya));
-        const matches = [];
-        datasets.forEach(data => (data.suttas || []).forEach(sutta => {
-          const haystack = [sutta.titleSi,sutta.paliTitle,sutta.reference,sutta.sectionSi,sutta.collection,sutta.contentSi,sutta.excerpt].join(' ').toLocaleLowerCase('si');
-          if (haystack.includes(normalized)) matches.push({data,sutta});
-        }));
-        if (!matches.length) { resultsEl.innerHTML = '<div class="hint">ගැළපෙන සූත්‍රයක් හමු නොවීය.</div>'; return; }
-        resultsEl.innerHTML = `<div class="hint" style="margin-bottom:12px">සෙවුම් ප්‍රතිඵල: ${matches.length}</div>` + matches.map(({data,sutta},index) => `<article class="card"><h3><button class="sutta-link" type="button" data-match="${index}">${escapeHTML(sutta.titleSi || '')}</button></h3><div class="meta">${escapeHTML(sutta.reference || '')} · ${escapeHTML(data.nameSi || '')}</div><p>${escapeHTML(sutta.excerpt || sutta.contentSi || '')}</p></article>`).join('');
-        resultsEl.querySelectorAll('[data-match]').forEach(button => button.addEventListener('click', () => { const match = matches[Number(button.dataset.match)]; showSutta(match.data, match.sutta); }));
-      } catch (error) { console.error('Search failed:', error); resultsEl.innerHTML = '<div class="error">සෙවුම් දත්ත පූරණය කළ නොහැකි විය. GitHub Pages යාවත්කාලීන වූ පසු නැවත උත්සාහ කරන්න.</div>'; }
-    }
-
-    document.getElementById('heroSearch').addEventListener('submit', event => {
-      event.preventDefault();
-      const query = document.getElementById('heroQuery').value;
-      document.getElementById('readerSearch').value = query;
-      document.getElementById('reader').scrollIntoView({behavior:'smooth'});
-      searchAll(query);
-    });
-    document.getElementById('readerSearch').addEventListener('keydown', event => { if (event.key === 'Enter') { event.preventDefault(); searchAll(event.currentTarget.value); } });
-    document.getElementById('fontUp').addEventListener('click', () => { fontSize = Math.min(30,fontSize+1); document.documentElement.style.setProperty('--read-size', `${fontSize}px`); });
-    document.getElementById('fontDown').addEventListener('click', () => { fontSize = Math.max(14,fontSize-1); document.documentElement.style.setProperty('--read-size', `${fontSize}px`); });
-    const themeButton = document.getElementById('themeButton');
-    try { if (localStorage.getItem('sadaham-dark') === 'true') document.body.classList.add('dark'); } catch {}
-    function updateThemeButton() { const dark = document.body.classList.contains('dark'); themeButton.textContent = dark ? 'ආලෝක මාදිලිය' : 'අඳුරු මාදිලිය'; themeButton.setAttribute('aria-pressed',String(dark)); }
-    updateThemeButton();
-    themeButton.addEventListener('click', () => { document.body.classList.toggle('dark'); updateThemeButton(); try { localStorage.setItem('sadaham-dark',String(document.body.classList.contains('dark'))); } catch {} });
-    const menuButton = document.getElementById('menuButton');
-    menuButton.addEventListener('click', () => { const open = document.getElementById('mainNav').classList.toggle('open'); menuButton.setAttribute('aria-expanded',String(open)); });
-
-    fetchJSON(INDEX_URL).then(index => {
-      const items = Array.isArray(index) ? index : index.nikayas;
-      if (!Array.isArray(items)) throw new Error('Invalid nikaya index format');
-      renderNavigation(items);
-    }).catch(error => {
-      console.error('Could not load nikaya index:', error);
-      listEl.innerHTML = '<p class="error">නිකාය ලැයිස්තුව පූරණය කළ නොහැකි විය. පිටුව නැවත පූරණය කර උත්සාහ කරන්න.</p>';
-    });
+    document.getElementById('font-up').addEventListener('click',()=>{readingSize=Math.min(32,readingSize+1);document.documentElement.style.setProperty('--reading',`${readingSize}px`);});
+    document.getElementById('font-down').addEventListener('click',()=>{readingSize=Math.max(15,readingSize-1);document.documentElement.style.setProperty('--reading',`${readingSize}px`);});
+    loadNikayas();
   </script>
 </body>
 </html>
